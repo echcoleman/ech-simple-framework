@@ -3,6 +3,6 @@
  * Index page
  */
 
-$this->display(null, $this->view('index'));
+$this->display('Title', array('content' => $this->view('index')));
 
 ?>

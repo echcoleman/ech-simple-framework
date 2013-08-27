@@ -109,11 +109,14 @@ class EchSimpleFramework {
 	 * Display page
 	 * 
 	 * @param string $title Page title
-	 * @param string $body Page body
-	 * @param string $class Content class. Optional
+	 * @param array $params Page parameters
+	 * @param string $layout Page layout. Optional
 	 */
-	public function display($title, $body, $class = null) {
-		echo $this->view('page-elements/layout', compact('body', 'title', 'class'));
+	public function display($title, $params, $layout = '1-column') {
+		if (!isset($params['title'])) {
+			$params['title'] = $title;
+		}
+		echo $this->view('layout/' . $layout, $params);
 	}
 }
 

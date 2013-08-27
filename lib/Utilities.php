@@ -11,7 +11,7 @@
  * @param string $path URL path string
  * @return string URL path
  */
-function siteurl($path) {
+function siteurl($path = null) {
 	// add http to www. addresses
 	if (strpos($path, 'www.') === 0) {
 		$path = 'http://' . $path;
